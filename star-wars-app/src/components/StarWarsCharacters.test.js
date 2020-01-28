@@ -1,13 +1,10 @@
 import React from 'react';
-import { render, fireEvent } from '@testing-library/react';
+import { render, fireEvent, wait } from '@testing-library/react';
 import { getData as mockGetData } from '../api/getData';
+import StarWarsCharacters from './StarWarsCharacters';
 import App from '../App';
 
 jest.mock('../api');
-test('render App',() => {
-  render(<App />)
-})
-
 
 test('next list called', () => {
   const { getByText } = render(<StarWarsCharacters />)
@@ -16,7 +13,6 @@ test('next list called', () => {
   wait(() => {
     expect(mockGetData).toHaveBeenCalledTimes(1)
 })
-
 })
 
 test('previous list called', () => {
@@ -26,4 +22,8 @@ test('previous list called', () => {
   wait(() => {
     expect(mockGetData).toHaveBeenCalledTimes(1)
 })
+})
+
+test('render App',() => {
+  render(<App />)
 })
