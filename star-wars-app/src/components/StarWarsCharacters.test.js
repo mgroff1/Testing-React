@@ -24,6 +24,10 @@ test('previous list called', () => {
 })
 })
 
+test('render StarWarsCharacters', () => {
+  render(<StarWarsCharacters />)
+})
+
 test('render App',() => {
   render(<App />)
 })
