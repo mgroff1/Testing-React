@@ -1,9 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Loader from "react-loader-spinner";
-
-import { getData } from "../api";
+import { getData } from "../api/getData";
 import "./star-wars-characters.css";
-
 export default function StarWarsCharacters() {
   const [url, setUrl] = useState("https://swapi.co/api/people");
   const [previous, setPrevious] = useState();
